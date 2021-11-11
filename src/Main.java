@@ -12,6 +12,11 @@ Compilateur :       Java 1.8
 
 --------------------------- */
 public class Main {
+
+    public static String afficherCalendrier() {
+        return null;
+    }
+
     public static void main(String [] args) {
 
 
@@ -50,18 +55,16 @@ public class Main {
         IL6_1.definirLecons(POO1_1, POO1_2, POO1_3, PLP_1, TIC_1);
         TS6_1.definirLecons(POO1_1, POO1_2, POO1_3);
 
-        Personne[] personnes = {Donini, Evequoz, Lennon, McCartney, Starr, Harrison, Waters, Gilmour};
+        /*Personne[] personnes = {Donini, Evequoz, Lennon, McCartney, Starr, Harrison, Waters, Gilmour};
 
         System.out.println("-- Membres de l'ecole");
 
         for(Personne personne : personnes){
             System.out.println(personne);
-        }
+        }*/
 
         System.out.println(IL6_1.horaire());
-        System.out.println(Donini.horaire());
-
-
+        //System.out.println(Donini.horaire());
 
 
     }

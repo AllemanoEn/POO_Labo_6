@@ -11,6 +11,7 @@ Remarque(s) :
 Compilateur :       Java 1.8
 
 --------------------------- */
+import org.omg.CORBA.Environment;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
@@ -40,11 +41,43 @@ public class Lecon {
 
 
     public static String horaire(Lecon ... lecons){
-        StringBuilder horaire = new StringBuilder();
-        for(Lecon lecon : lecons){
-            horaire.append(lecon.matiere + " " + lecon.salle + " " + (lecon.professeur == null?"":lecon.professeur.abreviation()) + "\n");
+        StringBuilder calendrier = new StringBuilder();
+        StringBuilder ligneCourante = new StringBuilder();
+        boolean afficherCelluleVide = true;
+        String[] periode = new String[]{"8:30","9:15","10:25","11:15","12:00","13:15","14:00","14:55","15:45","16:35","17:20"};
+        calendrier.append(String.format("%76s","| Lun         | Mar         | Mer         | Jeu         | Ven         |")).append("\n");
+        calendrier.append(String.format("%76s","|-------------|-------------|-------------|-------------|-------------|")).append("\n");
+
+        for (int i = 0; i < 11;++i){
+            ligneCourante.append(String.format("%5s",periode[i]));
+            for (int j = 0; j < 5;++j){
+                ligneCourante.append("|");
+
+                for (Lecon l : lecons){
+                    if (l.jourSemaine == j && l.periodeDebut == i){
+                        ligneCourante.append(String.format("%13s", l.matiere + " " + l.salle + " " + (l.professeur == null ? "" : l.professeur.abreviation())));
+                        afficherCelluleVide = false;
+                    }
+                }
+
+                if(afficherCelluleVide){
+                    ligneCourante.append(String.format("%13s", " "));
+                }
+
+                afficherCelluleVide = true;
+
+            }
+            ligneCourante.append("|\n");
+            ligneCourante.append(String.format("%5s"," "));
+
+            for (int j = 0; j < 5;++j){
+                ligneCourante.append("|-------------");
+            }
+
+            calendrier.append(ligneCourante).append("|\n");
+            ligneCourante.setLength(0); //Efface le contenue
         }
-        horaire.append("\n");
-        return horaire.toString();
+
+        return calendrier.toString();
     }
 }

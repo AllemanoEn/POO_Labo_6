@@ -13,6 +13,8 @@ Compilateur :       Java 1.8
 --------------------------- */
 public class Main {
     public static void main(String [] args) {
+
+
         Professeur Donini = new Professeur("Donini", "Pier", "PDO");
         Professeur Evequoz = new Professeur("Evequoz", "Claude", "CEZ");
 
@@ -23,6 +25,9 @@ public class Main {
         Lecon PLP_1 = new Lecon("PLP", 2, 7, 2, "H01", Evequoz);
 
         Lecon TIC_1 = new Lecon("TIC", 1, 9, 1, "F06");
+
+        Donini.definirLecons(POO1_1, POO1_2, POO1_3);
+        Evequoz.definirLecons(PLP_1);
 
         Etudiant Lennon = new Etudiant("Lennon", "John", 1234);
         Etudiant McCartney = new Etudiant("Mc Cartney", "Paul", 2341);
@@ -53,6 +58,8 @@ public class Main {
             System.out.println(personne);
         }
 
+        System.out.println(IL6_1.horaire());
+        System.out.println(Donini.horaire());
 
 
 

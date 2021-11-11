@@ -11,34 +11,39 @@ Remarque(s) :
 Compilateur :       Java 1.8
 
 --------------------------- */
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Professeur extends Personne {
     private String abreviation;
+    private ArrayList<Lecon> lecons = new ArrayList<>();
 
     public Professeur(String nom, String prenom, String abreviation) {
         super(nom, prenom);
         setAbreviation(abreviation);
     }
 
-    public String getAbreviation() {
-        return abreviation;
-    }
 
     public void setAbreviation(String abreviation) {
         this.abreviation = abreviation;
     }
 
     public String abreviation(){
-        throw new NotImplementedException();
+        return this.abreviation;
     }
 
     public String toString(){
-        return "Prof. " + super.toString() + " (" + getAbreviation() + ")";
+        return "Prof. " + super.toString() + " (" + abreviation() + ")";
     }
 
+    public void definirLecons(Lecon ... lecons){
+        this.lecons.addAll(Arrays.asList(lecons));
+    }
+
+
     public String horaire(){
-        throw new NotImplementedException();
+        return Lecon.horaire(lecons.toArray(new Lecon[0]));
     }
 
 }

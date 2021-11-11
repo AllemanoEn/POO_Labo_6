@@ -28,11 +28,8 @@ public class Groupe {
         this.trimestre = trimestre;
     }
 
-    public String toString(){
-        return orientation + numero + "-" + trimestre;
-    }
     public String nom(){
-        throw new NotImplementedException();
+        return orientation + numero + "-" + trimestre;
     }
     public int nombreEtudiants(){
         throw new NotImplementedException();
@@ -43,7 +40,7 @@ public class Groupe {
     }
 
     public String horaire(){
-        throw new NotImplementedException();
+        return Lecon.horaire(lecons.toArray(new Lecon[0]));
     }
 
 }

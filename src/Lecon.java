@@ -13,6 +13,8 @@ Compilateur :       Java 1.8
 --------------------------- */
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
+
 public class Lecon {
 
     private String matiere;
@@ -37,7 +39,12 @@ public class Lecon {
     }
 
 
-    public String horaire(String ... args){
-        throw new NotImplementedException();
+    public static String horaire(Lecon ... lecons){
+        StringBuilder horaire = new StringBuilder();
+        for(Lecon lecon : lecons){
+            horaire.append(lecon.matiere + " " + lecon.salle + " " + (lecon.professeur == null?"":lecon.professeur.abreviation()) + "\n");
+        }
+        horaire.append("\n");
+        return horaire.toString();
     }
 }

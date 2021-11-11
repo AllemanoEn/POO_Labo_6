@@ -26,10 +26,11 @@ public class Etudiant extends Personne{
     public Groupe getGroupe() {
         return groupe;
     }
-
     public void setGroupe(Groupe groupe) {
         this.groupe = groupe;
     }
+
+
 
     public Etudiant(String nom, String prenom, int matricule) {
         super(nom, prenom);
@@ -38,10 +39,10 @@ public class Etudiant extends Personne{
 
     public Etudiant(String nom, String prenom, int matricule, Groupe groupe){
         this(nom, prenom, matricule);
-        setGroupe(groupe);
+        this.groupe = groupe;
     }
 
     public String toString(){
-        return "Etud. " + super.toString() + " (#" + getMatricule() + ") - " + groupe.toString() ;
+        return "Etud. " + super.toString() + " (#" + getMatricule() + ") - " + groupe.nom() ;
     }
 }

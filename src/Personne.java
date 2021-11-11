@@ -1,4 +1,16 @@
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+/* ---------------------------
+Laboratoire :       POO Labo 6 - Ecole
+Fichier :           Personne.java
+Auteur(s) :         Allemano Enzo & Romano Malo
+Date :              11.11.2021
+
+But :
+
+Remarque(s) :
+
+Compilateur :       Java 1.8
+
+--------------------------- */
 
 public class Personne {
     private String nom;

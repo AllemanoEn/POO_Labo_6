@@ -1,3 +1,16 @@
+/* ---------------------------
+Laboratoire :       POO Labo 6 - Ecole
+Fichier :           Lecon.java
+Auteur(s) :         Allemano Enzo & Romano Malo
+Date :              11.11.2021
+
+But :
+
+Remarque(s) :
+
+Compilateur :       Java 1.8
+
+--------------------------- */
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Lecon {

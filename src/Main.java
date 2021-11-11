@@ -1,3 +1,16 @@
+/* ---------------------------
+Laboratoire :       POO Labo 6 - Ecole
+Fichier :           Main.java
+Auteur(s) :         Allemano Enzo & Romano Malo
+Date :              11.11.2021
+
+But :
+
+Remarque(s) :
+
+Compilateur :       Java 1.8
+
+--------------------------- */
 public class Main {
     public static void main(String [] args) {
         Professeur Donini = new Professeur("Donini", "Pier", "PDO");
@@ -34,9 +47,10 @@ public class Main {
 
         Personne[] personnes = {Donini, Evequoz, Lennon, McCartney, Starr, Harrison, Waters, Gilmour};
 
+        System.out.println("-- Membres de l'ecole");
+
         for(Personne personne : personnes){
             System.out.println(personne);
-
         }
 
 

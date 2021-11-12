@@ -44,6 +44,7 @@ public class Lecon {
         StringBuilder calendrier = new StringBuilder();
         StringBuilder ligneCourante = new StringBuilder();
         boolean afficherCelluleVide = true;
+        boolean afficheFinDePeriode = true;
         String[] periode = new String[]{"8:30","9:15","10:25","11:15","12:00","13:15","14:00","14:55","15:45","16:35","17:20"};
         calendrier.append(String.format("%76s","| Lun         | Mar         | Mer         | Jeu         | Ven         |")).append("\n");
         calendrier.append(String.format("%76s","|-------------|-------------|-------------|-------------|-------------|")).append("\n");
@@ -55,7 +56,7 @@ public class Lecon {
 
                 for (Lecon l : lecons){
                     if (l.jourSemaine == j && l.periodeDebut == i){
-                        ligneCourante.append(String.format("%13s", l.matiere + " " + l.salle + " " + (l.professeur == null ? "" : l.professeur.abreviation())));
+                        ligneCourante.append(String.format("%-5s %s", l.matiere , l.salle + (l.professeur == null ? "    " : " " + l.professeur.abreviation())));
                         afficherCelluleVide = false;
                     }
                 }
@@ -71,7 +72,18 @@ public class Lecon {
             ligneCourante.append(String.format("%5s"," "));
 
             for (int j = 0; j < 5;++j){
-                ligneCourante.append("|-------------");
+                for (Lecon l : lecons){
+                    if (l.jourSemaine == j && (l.periodeDebut <= i && l.periodeDebut + l.duree -1 > i)){
+                        ligneCourante.append(String.format("|%13s"," "));
+                        afficheFinDePeriode = false;
+                    }
+                }
+
+                if (afficheFinDePeriode){
+                    ligneCourante.append("|-------------");
+                }
+
+                afficheFinDePeriode = true;
             }
 
             calendrier.append(ligneCourante).append("|\n");

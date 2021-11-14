@@ -2,9 +2,10 @@
 Laboratoire :       POO Labo 6 - Ecole
 Fichier :           Lecon.java
 Auteur(s) :         Allemano Enzo & Romano Malo
-Date :              11.11.2021
+Date :              15.11.2021
 
-But :
+But :               Definit la classe Lecon, ses attributs et les méthodes qui lui sont possibles.
+                    Définit également la méthode statique permettant de générer un horaire au format texte.
 
 Remarque(s) :
 
@@ -21,6 +22,14 @@ public class Lecon {
     private String salle;
     private Professeur professeur;
 
+    /**
+     * Créer une leçon sans professuer
+     * @param matiere Matière de la leçon
+     * @param jourSemaine Jour de la leçon
+     * @param periodeDebut Préiode de début de la leçon
+     * @param duree Durée de la leçon
+     * @param salle Salle de la leçon
+     */
     public Lecon(String matiere, int jourSemaine, int periodeDebut,
                  int duree, String salle) {
         this.matiere = matiere;
@@ -29,13 +38,27 @@ public class Lecon {
         this.duree = duree;
         this.salle = salle;
     }
+
+    /**
+     * Créer une leçon avec un professeur
+     * @param matiere Matière de la leçon
+     * @param jourSemaine Jour de la leçon
+     * @param periodeDebut Préiode de début de la leçon
+     * @param duree Durée de la leçon
+     * @param salle Salle de la leçon
+     * @param professeur Professeur de la leçon
+     */
     public Lecon(String matiere, int jourSemaine, int periodeDebut,
                  int duree, String salle, Professeur professeur){
         this(matiere, jourSemaine, periodeDebut, duree, salle);
         this.professeur = professeur;
     }
 
-
+    /**
+     * Méthode statique de génération d'un calendrier au format texte d'un tableau de leçons.
+      * @param lecons Tableau de leçons
+     * @return Horaire des leçons au format texte
+     */
     public static String horaire(Lecon ... lecons){
         StringBuilder calendrier = new StringBuilder();
         StringBuilder ligneCourante = new StringBuilder();

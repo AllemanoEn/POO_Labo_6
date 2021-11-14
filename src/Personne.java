@@ -2,9 +2,9 @@
 Laboratoire :       POO Labo 6 - Ecole
 Fichier :           Personne.java
 Auteur(s) :         Allemano Enzo & Romano Malo
-Date :              11.11.2021
+Date :              15.11.2021
 
-But :
+But :               Definit la classe abstraite Personne, ses attributs et les méthodes qui lui sont possibles
 
 Remarque(s) :
 
@@ -12,32 +12,25 @@ Compilateur :       Java 1.8
 
 --------------------------- */
 
-public class Personne {
+public abstract class Personne {
     private String nom;
     private String prenom;
 
+    /**
+     * Créer une personne
+     * @param nom Nom de la personne
+     * @param prenom Prénom de la personne
+     */
     public Personne(String nom, String prenom) {
         this.nom = nom;
         this.prenom = prenom;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
+    /**
+     * Obtenir les infos d'une personne au format texte
+     * @return Infos de la personne au format [nom] [prenom]
+     */
     public String toString(){
-        return getPrenom() + " " + getNom();
+        return this.prenom + " " + this.nom;
     }
 }

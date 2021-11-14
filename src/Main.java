@@ -18,8 +18,6 @@ public class Main {
     }
 
     public static void main(String [] args) {
-
-
         Professeur Donini = new Professeur("Donini", "Pier", "PDO");
         Professeur Evequoz = new Professeur("Evequoz", "Claude", "CEZ");
 
@@ -48,9 +46,11 @@ public class Main {
         McCartney.setGroupe(IL6_1);
         Starr.setGroupe(IL6_1);
         Harrison.setGroupe(IL6_1);
+        IL6_1.definirEtudiants(Lennon, McCartney, Starr, Harrison);
 
         Waters.setGroupe(TS6_1);
         Gilmour.setGroupe(TS6_1);
+        TS6_1.definirEtudiants(Waters, Gilmour);
 
         IL6_1.definirLecons(POO1_1, POO1_2, POO1_3, PLP_1, TIC_1);
         TS6_1.definirLecons(POO1_1, POO1_2, POO1_3);
@@ -64,7 +64,7 @@ public class Main {
         }*/
 
         System.out.println(IL6_1.horaire());
-        //System.out.println(Donini.horaire());
+        // System.out.println(Donini.horaire());
 
 
     }

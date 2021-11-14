@@ -11,10 +11,6 @@ Remarque(s) :
 Compilateur :       Java 1.8
 
 --------------------------- */
-import org.omg.CORBA.Environment;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.ArrayList;
 
 public class Lecon {
 

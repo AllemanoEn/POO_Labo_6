@@ -12,12 +12,10 @@ Compilateur :       Java 1.8
 
 --------------------------- */
 
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Professeur extends Personne {
     private String abreviation;
-    private ArrayList<Lecon> lecons = new ArrayList<>();
+    private Lecon[] lecons;
 
     public Professeur(String nom, String prenom, String abreviation) {
         super(nom, prenom);
@@ -38,12 +36,12 @@ public class Professeur extends Personne {
     }
 
     public void definirLecons(Lecon ... lecons){
-        this.lecons.addAll(Arrays.asList(lecons));
+        this.lecons = lecons;
     }
 
 
     public String horaire(){
-        return Lecon.horaire(lecons.toArray(new Lecon[0]));
+        return Lecon.horaire(lecons);
     }
 
 }

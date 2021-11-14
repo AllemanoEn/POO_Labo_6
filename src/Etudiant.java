@@ -11,21 +11,11 @@ Remarque(s) :
 Compilateur :       Java 1.8
 
 --------------------------- */
+
 public class Etudiant extends Personne{
     private int matricule;
     private Groupe groupe;
 
-    public int getMatricule() {
-        return matricule;
-    }
-
-    public void setMatricule(int matricule) {
-        this.matricule = matricule;
-    }
-
-    public Groupe getGroupe() {
-        return groupe;
-    }
     public void setGroupe(Groupe groupe) {
         this.groupe = groupe;
     }
@@ -34,15 +24,10 @@ public class Etudiant extends Personne{
 
     public Etudiant(String nom, String prenom, int matricule) {
         super(nom, prenom);
-        setMatricule(matricule);
-    }
-
-    public Etudiant(String nom, String prenom, int matricule, Groupe groupe){
-        this(nom, prenom, matricule);
-        this.groupe = groupe;
+        this.matricule = matricule;
     }
 
     public String toString(){
-        return "Etud. " + super.toString() + " (#" + getMatricule() + ") - " + groupe.nom() ;
+        return "Etud. " + super.toString() + " (#" + this.matricule + ") - " + groupe.nom() ;
     }
 }

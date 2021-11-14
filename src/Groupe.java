@@ -11,16 +11,14 @@ Remarque(s) :
 Compilateur :       Java 1.8
 
 --------------------------- */
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Groupe {
-    private int numero;
-    private String orientation;
-    private int trimestre;
-    private ArrayList<Lecon> lecons = new ArrayList<>();
+    private final int numero;
+    private final String orientation;
+    private final int trimestre;
+    private Lecon[] lecons;
+    private Etudiant[] etudiants;
+    private int nbEtudiants = 0;
 
     public Groupe(int numero, String orientation, int trimestre) {
         this.numero = numero;
@@ -31,16 +29,21 @@ public class Groupe {
     public String nom(){
         return orientation + numero + "-" + trimestre;
     }
+
     public int nombreEtudiants(){
-        throw new NotImplementedException();
+        return nbEtudiants;
     }
 
     public void definirLecons(Lecon ... lecons){
-        this.lecons.addAll(Arrays.asList(lecons));
+        this.lecons = lecons;
+    }
+
+    public void definirEtudiants(Etudiant ... etudiants){
+        this.etudiants = etudiants;
+        nbEtudiants = etudiants.length;
     }
 
     public String horaire(){
-        return Lecon.horaire(lecons.toArray(new Lecon[0]));
+        return Lecon.horaire(lecons);
     }
-
 }

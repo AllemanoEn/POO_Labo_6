@@ -71,6 +71,6 @@ public class Groupe {
      * @return Horaire du groupe en 2 dimensions au format texte
      */
     public String horaire(){
-        return Lecon.horaire(lecons);
+        return "\n-- Horaire du groupe " + nom() + " (" + nombreEtudiants() + " étudiants)\n\n" + Lecon.horaire(lecons);
     }
 }

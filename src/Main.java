@@ -77,10 +77,27 @@ public class Main {
         TS6_1.definirLecons(POO1_1, POO1_2, POO1_3);
 
         /**
-         * Affichage de l'horaire du grupe IL6-1
+         * Déclration du tableau des membres de l'école
+         */
+        Personne membresEcole[] = new Personne[]{Donini, Evequoz, Lennon, McCartney, Starr, Harrison, Waters, Gilmour};
+
+        /**
+         * Affichage des membres de l'école
+         */
+        System.out.println("-- Membres de l'ecole\n");
+        for(Personne membre : membresEcole){
+            System.out.println(membre);
+        }
+
+        /**
+         * Affichage des infos et de l'horaire du grupe IL6-1
          */
         System.out.println(IL6_1.horaire());
 
+        /**
+         * Affichage de l'horaire de Donini
+         */
+        System.out.println(Donini.horaire());
 
     }
 }

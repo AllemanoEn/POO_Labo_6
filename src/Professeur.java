@@ -58,7 +58,7 @@ public class Professeur extends Personne {
      * @return L'horaire du professeur en 2 dimensions au format texte
      */
     public String horaire(){
-        return Lecon.horaire(lecons);
+        return "\n-- Horaire " + toString() + "\n\n" + Lecon.horaire(lecons);
     }
 
 }

@@ -56,7 +56,7 @@ public class Lecon {
 
     /**
      * Méthode statique de génération d'un calendrier au format texte d'un tableau de leçons.
-      * @param lecons Tableau de leçons
+     * @param lecons Tableau de leçons
      * @return Horaire des leçons au format texte
      */
     public static String horaire(Lecon ... lecons){

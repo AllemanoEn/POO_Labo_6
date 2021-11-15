@@ -64,9 +64,12 @@ public class Lecon {
         StringBuilder ligneCourante = new StringBuilder();
         boolean afficherCelluleVide = true;
         boolean afficheFinDePeriode = true;
-        String[] periode = new String[]{"8:30","9:15","10:25","11:15","12:00","13:15","14:00","14:55","15:45","16:35","17:20"};
-        calendrier.append(String.format("%76s","| Lun         | Mar         | Mer         | Jeu         | Ven         |")).append("\n");
-        calendrier.append(String.format("%76s","|-------------|-------------|-------------|-------------|-------------|")).append("\n");
+        String[] periode = new String[]{"8:30","9:15","10:25","11:15","12:00","13:15",
+                                        "14:00","14:55","15:45","16:35","17:20"};
+        calendrier.append(String.format("%76s","| Lun         | Mar         | Mer         " +
+                                               "| Jeu         | Ven         |")).append("\n");
+        calendrier.append(String.format("%76s","|-------------|-------------|-------------" +
+                                               "|-------------|-------------|")).append("\n");
 
         for (int i = 0; i < 11;++i){
             ligneCourante.append(String.format("%5s",periode[i]));
@@ -75,7 +78,9 @@ public class Lecon {
 
                 for (Lecon l : lecons){
                     if (l.jourSemaine == j && l.periodeDebut == i){
-                        ligneCourante.append(String.format("%-5s %s", l.matiere , l.salle + (l.professeur == null ? "    " : " " + l.professeur.abreviation())));
+                        ligneCourante.append(String.format("%-5s %s", l.matiere ,
+                                l.salle + (l.professeur == null ? "    " : " "
+                                        + l.professeur.abreviation())));
                         afficherCelluleVide = false;
                     }
                 }
@@ -92,7 +97,8 @@ public class Lecon {
 
             for (int j = 0; j < 5;++j){
                 for (Lecon l : lecons){
-                    if (l.jourSemaine == j && (l.periodeDebut <= i && l.periodeDebut + l.duree -1 > i)){
+                    if (l.jourSemaine == j && (l.periodeDebut <= i &&
+                        l.periodeDebut + l.duree -1 > i)){
                         ligneCourante.append(String.format("|%13s"," "));
                         afficheFinDePeriode = false;
                     }

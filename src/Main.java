@@ -79,7 +79,8 @@ public class Main {
         /**
          * Déclration du tableau des membres de l'école
          */
-        Personne membresEcole[] = new Personne[]{Donini, Evequoz, Lennon, McCartney, Starr, Harrison, Waters, Gilmour};
+        Personne membresEcole[] = new Personne[]{Donini, Evequoz, Lennon, McCartney,
+                                                 Starr, Harrison, Waters, Gilmour};
 
         /**
          * Affichage des membres de l'école

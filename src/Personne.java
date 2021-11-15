@@ -4,7 +4,8 @@ Fichier :           Personne.java
 Auteur(s) :         Allemano Enzo & Romano Malo
 Date :              15.11.2021
 
-But :               Definit la classe abstraite Personne, ses attributs et les méthodes qui lui sont possibles
+But :               Definit la classe abstraite Personne, ses attributs
+                    et les méthodes qui lui sont possibles
 
 Remarque(s) :
 
